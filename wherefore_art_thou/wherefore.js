@@ -28,9 +28,9 @@ arr = newCollection.filter(function(obj)
 console.log(arr);
 
 
-document.getElementById("thecollection").innerHTML = "Here is the collection to filter: " + (JSON.stringify (collection));
-document.getElementById("thesource").innerHTML = "We want an array with all objects containing: " + (JSON.stringify(source));
-document.getElementById("theresult").innerHTML = "so I used Object.keys, and so far, what's in it : " + ourKeys + "<br> <br> and here the desired array:" +(JSON.stringify(arr));
+document.getElementById("thecollection").innerHTML = "<p>Here is the collection to filter: " + (JSON.stringify (collection))+"</p>";
+document.getElementById("thesource").innerHTML = "<p>We want an array with all objects containing: " + (JSON.stringify(source)) +"</p>";
+document.getElementById("theresult").innerHTML = "<p>so I used Object.keys, and so far, what's in it : <b>" + ourKeys + "</b></p><p> We have to use that as such : <ul> <li>check if the key exist in the objects: <i>obj.hasOwnProperty(theKeyYouWantToCheck)</i></li><li> then chek if the corresponding value matches the value in source! <i>(obj[theKeyYouWantToCheck] === source[theKeyYouWantToCheck])</i></li></ul> </p><p> so here is the desired array:" +(JSON.stringify(arr))+ "</p>";
   // Only change code above this line
 //return arr;
 
