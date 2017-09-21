@@ -37,6 +37,7 @@ fearNotLetter(str);
 				
 				var missingVal =  arr[x] + 1;
 				result = String.fromCharCode(missingVal);
+				break;
 			}
 		}
 		
