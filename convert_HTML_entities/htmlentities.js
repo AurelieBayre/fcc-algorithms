@@ -15,7 +15,7 @@ function output()
   function convertHTML(str)
   {
 
-  newStr = str.replace(/&/g, "&​amp;").replace(/</g, "&​lt;").replace(/>/g, "&​gt").replace(/'/g, "&​apos;");
+  newStr = str.replace(/&/g, "&​amp;").replace(/</g, "&​lt;").replace(/>/g, "&​gt;").replace(/'/g, "&​apos;").replace(/"/g, "&quot;");
 
   return newStr;
 }
