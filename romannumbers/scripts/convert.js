@@ -4,7 +4,6 @@ function output() {
 		var num = userinput.elements["usernumber"].value;
 		var romanResult = [];
 		var displayResult = "";
-
 		var ones = num % 10;
 		var tens = ((num - ones) / 10) % 10 ;
 		var totalTens = tens * 10;
