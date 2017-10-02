@@ -6,44 +6,42 @@
     var val2 = userinput.elements["usernumber2"].value;
     var num1 =parseInt(val1,10);
     var num2 = parseInt(val2,10);
-    var toTest = [num1, num2];
+    var arr = [num1, num2];
     var lCM;
-    var consecutiveArr = [];
-    toTest.sort(function(a,b) {return a - b});
+    var reverseArr=[];
+    console.log(arr); //getting stg
+arr.sort(function(a,b){return b - a});
+    for (var c = arr[0]; c >= arr[1]; c --)
+        {
+          reverseArr.push(c);
+        }
+console.log(reverseArr);
 
-    smallestCommons(toTest);
+    smallestCommons(arr);
 
-    document.getElementById("result1").innerHTML = "First, I will build an array of all consecutive numbers betweeen "+ num1 + " and " + num2;
-    document.getElementById("result2").innerHTML = "Here is our array: " + toTest + " and now it becomes: " + consecutiveArr;
-    document.getElementById("result3").innerHTML = "";
-    document.getElementById("result4").innerHTML = "The smallest common multiple is : <i>" + lCM +"</i>";
+
+    document.getElementById("result1").innerHTML = "The smallest common multiple is : <i>" + lCM +"</i>";
 
     function smallestCommons(arr)
     {
-      arr.sort(function(a,b) {return a - b});
-var min = arr[0];
-console.log(min);
-console.log(toTest);
-      for (var c= min; c <= arr[1]; c++)
-      {
-        consecutiveArr.push(c);
-      }
 
-      // testing each multiple of max until we reach one divisible by all numbers in array.
-// maximum multiple to set a limit
-var limit = consecutiveArr.reduce(function (previousVal, currentVal) {
-  return previousVal * currentVal;
-});
+//Thank you Euclid for GCD!!!
+function gcd(x,y) {
+  if (y == 0) //when there's no remainder...
+  {
+    return x; //then we have our gcd
+  }
+  else if (x >= y && y > 0 )
+  {
+    return gcd(y, x%y); // that's the heart of our function.
+  }
 
-var max = toTest[1];
-console.log(max);
-console.log(consecutiveArr);
+}
 
-var reverseArr = consecutiveArr.sort(function (a,b) {return b-a});
-console.log(reverseArr);
-for (var x = max; x < limit; x + max)
-    {
-      var check = 0;
+lCM = reverseArr.reduce(function (previousVal, currentVal) {
+  return (previousVal * currentVal)/ gcd(previousVal, currentVal);
+} );
+
       /*for (var y = 1; y < reverseArr.length; y ++)
         {
           if (x % reverseArr[y] === 0)
@@ -57,4 +55,3 @@ for (var x = max; x < limit; x + max)
     }
 
   }
-}
