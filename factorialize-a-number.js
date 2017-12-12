@@ -21,3 +21,15 @@ function factorialize(num) {
 factorialize(5);
 
 */
+
+//NEW SOLUTION!!! QUICKER, SIMPLER!!!
+
+function factorialize(num) {
+ let count= 1;
+  for (a= 1; a <= num; a++) {
+    count = count * a;
+  }
+  return count;
+}
+
+factorialize(5);
