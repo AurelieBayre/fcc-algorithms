@@ -1,0 +1,14 @@
+function palindrome(str) {
+  // Good luck!
+  
+  var prepareStr = str.toLowerCase(); //tout en minuscule
+  var cleanStr = prepareStr.replace(/[^A-Za-z0-9]/g, ''); //on enlève les caractères spéciaux
+  var reverseStr = cleanStr.split('').reverse().join('');
+  
+  if (cleanStr == reverseStr) {
+    return true;
+    } 
+    return false; 
+  } 
+
+palindrome("eye");
