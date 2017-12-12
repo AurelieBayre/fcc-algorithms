@@ -1,8 +1,9 @@
+/* ===== OLD SOLUTION!! ======
 function palindrome(str) {
   // Good luck!
   
   var prepareStr = str.toLowerCase(); //tout en minuscule
-  var cleanStr = prepareStr.replace(/[^A-Za-z0-9]/g, ''); //on enlève les caractères spéciaux
+  var cleanStr = prepareStr.replace(/[^A-Za-z0-9]/g, ''); //on enlève les caractères spéciaux THIS REGEX DOESNT MEAN ANYTHING!!!
   var reverseStr = cleanStr.split('').reverse().join('');
   
   if (cleanStr == reverseStr) {
@@ -10,5 +11,34 @@ function palindrome(str) {
     } 
     return false; 
   } 
+
+palindrome("eye");
+*/
+
+//====NEW SOLUTION:
+
+function palindrome(str) {
+  // Good luck!
+  //remove all non alphanum characters (and replace them with nothing).
+  //put everything lower case
+  let newStr = str.replace(/\W|\_/g, '').toLowerCase(); //the magic of chaining methods...
+   // console.log(newStr);
+  
+  //now I'm making another string which is newStr in reverse. 
+  let newArr = newStr.split('').reverse();
+  // console.log(newArr);
+  let compareStr = newArr.join('');
+  
+  // comparing:
+  if (newStr === compareStr) {
+    return true;
+  }
+  else {
+    return false;
+  }
+ 
+}
+
+
 
 palindrome("eye");
